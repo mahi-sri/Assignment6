@@ -7,21 +7,31 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
+        stage('Build')
+        {
+            steps
+            {
+                echo 'Building...'
                 
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                git 'https://github.com/mahi-sri/Assignment6.git'
 
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-
-            post {
-              
-                success
+        }
+            
+            stage('Test') 
+            {
+            steps 
                 {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                echo 'Testing...'
                 }
+            }
+        
+            stage('Deploy') 
+        {
+            steps 
+            {
+                echo 'Deploying...'
             }
         }
     }
