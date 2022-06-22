@@ -1,30 +1,27 @@
-pipeline
-{
+pipeline {
     agent any
-    
-    stages
-    {
-        stage('Build')
-        {
-            steps
-            {
-                echo 'Building'
-            }
-        }
+
+    tools {
         
-        stage('Test')
-        {
-            steps
-            {
-                echo 'Testing '
+        maven "myMaven"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                
+                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-        }
-        
-        stage('Deploy')
-        {
-            steps
-            {
-                echo 'Deploying'
+
+            post {
+              
+                success
+                {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
