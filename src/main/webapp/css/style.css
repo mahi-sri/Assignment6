@@ -1,0 +1,63 @@
+
+#input-box{
+	width: 550px;
+	border-bottom: 1px solid #58acfa;
+	border-top: 1px solid #58acfa;
+	border-left: 1px solid #58acfa;
+	border-right: 1px solid #58acfa;
+	margin: auto;
+	margin-top: 130px;
+	border-radius: 10px;
+}
+
+#login-heading{
+	width: 548px;
+	background: #bae1ff;
+	height: 35px;
+	border-radius: 10px 10px 0px 0px;
+	padding-left: 11px;
+	padding-top: 6px;
+	color: #black;
+}
+
+#login-credential{
+	padding-left: 60px;
+	padding-top: 15px;
+}
+
+.error{
+	padding-left: 18px;
+}
+
+.form-group{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.input-desc{
+	padding-left: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.input-row{
+	display: flex;
+	padding-left: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.table-disp{
+	width: 95%;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+
+.heading{
+	display: flex;
+	margin-top: 10px;
+}
+.username{
+	padding-right: 10px;
+}
